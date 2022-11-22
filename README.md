@@ -115,7 +115,7 @@ Reccomender is a powerful framework for for content based filtering
 <!-- ROADMAP -->
 ## Roadmap
 
-- Save all data to CSV (contents,people)
+- Save all data to MessagePack (contents,people)
 - API for easy use (add data,get reccomendation,create user)
 
 
