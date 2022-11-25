@@ -3,8 +3,8 @@ import Content
 import User
 class DataStore:
     def __init__(self) -> None:
-        self.content = []
-        self.users= []
+        self.content:list = []
+        self.users:list= []
     
     def store(self):
         data={
