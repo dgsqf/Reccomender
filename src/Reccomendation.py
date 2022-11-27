@@ -20,7 +20,7 @@ def Reccomend(user:User,DataStore:DataStore):
     user_profile= normalize(user_profile)
     print(user_profile)
 
-def get_movie_vector(tags,content):
+def get_content_vector(tags,content):
     vector=np.zeros(len(tags))
     
     for i,x in enumerate(tags):
