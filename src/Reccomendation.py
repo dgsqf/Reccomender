@@ -16,7 +16,7 @@ def Reccomend(user:User,DataStore:DataStore):
 
     user_profile=np.zeros(len(tags))
     for i in user.ratings.items():
-        user_profile=np.add(get_movie_vector(tags,i[0])*i[1],user_profile)
+        user_profile=np.add(get_content_vector(tags,i[0])*i[1],user_profile)
     user_profile= normalize(user_profile)
     print(user_profile)
 
