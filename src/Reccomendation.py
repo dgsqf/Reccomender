@@ -1,12 +1,14 @@
 import User
 import DataStore
 import numpy as np
+import random
 def normalize(v):
     norm=np.linalg.norm(v)
     if norm==0:
         norm=np.finfo(v.dtype).eps
     return v/norm
 def Reccomend(user:User,DataStore:DataStore):
+    results={}
     content=DataStore.content
     tags=set()
     for i in content:
@@ -16,10 +18,25 @@ def Reccomend(user:User,DataStore:DataStore):
 
     user_profile=np.zeros(len(tags))
     for i in user.ratings.items():
+<<<<<<< HEAD
+=======
+        if i[0] in content:
+            content.remove(i[0])
+>>>>>>> af4e808 (finished reccommendation system)
         user_profile=np.add(get_content_vector(tags,i[0])*i[1],user_profile)
     user_profile= normalize(user_profile)
-    print(user_profile)
+    
+    for x in content:
+        vector=np.sum(get_content_vector(tags,x)*user_profile)
+        
+        results[x]=vector
+    return random.choice(list({i for i in results if results[i]==max(results.values())})).tags
+    
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> af4e808 (finished reccommendation system)
 def get_content_vector(tags,content):
     vector=np.zeros(len(tags))
     
