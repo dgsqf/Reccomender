@@ -18,11 +18,10 @@ def Reccomend(user:User,DataStore:DataStore):
 
     user_profile=np.zeros(len(tags))
     for i in user.ratings.items():
-<<<<<<< HEAD
-=======
+
         if i[0] in content:
             content.remove(i[0])
->>>>>>> af4e808 (finished reccommendation system)
+
         user_profile=np.add(get_content_vector(tags,i[0])*i[1],user_profile)
     user_profile= normalize(user_profile)
     
@@ -30,13 +29,8 @@ def Reccomend(user:User,DataStore:DataStore):
         vector=np.sum(get_content_vector(tags,x)*user_profile)
         
         results[x]=vector
-    return random.choice(list({i for i in results if results[i]==max(results.values())})).tags
-    
+    return random.choice(list({i for i in results if results[i]==max(results.values())}))
 
-<<<<<<< HEAD
-=======
-
->>>>>>> af4e808 (finished reccommendation system)
 def get_content_vector(tags,content):
     vector=np.zeros(len(tags))
     
