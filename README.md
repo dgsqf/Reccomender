@@ -94,12 +94,13 @@ Reccomender is a powerful framework for for content based filtering
 
 
 <!-- GETTING STARTED -->
+### Prerequisites
+install dependencies
+```zsh
+pip install requirements.txt
+```
 ## Getting Started
 # TODO
-
-### Prerequisites
-# TODO
-
 ### Installation
 
 # TODO
