@@ -18,7 +18,6 @@ def Reccomend(user:User,DataStore:DataStore):
 
     user_profile=np.zeros(len(tags))
     for i in user.ratings.items():
-
         if i[0] in content:
             content.remove(i[0])
 
